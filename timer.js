@@ -4,6 +4,7 @@ let minuteElement = document.getElementById("minutes");
 let secondElement = document.getElementById("seconds");
 let inputElement = document.getElementById("datetime-input");
 let buttonElement = document.getElementById("start-timer");
+let resetButtonElement = document.getElementById("reset-timer");
 // console.log(buttonElement);
 
 const currentTime = new Date();
@@ -57,3 +58,4 @@ buttonElement.addEventListener("click", () => {
   updateCountdown(); // Call it immediately
   let timer = setInterval(updateCountdown, 1000);
 });
+
