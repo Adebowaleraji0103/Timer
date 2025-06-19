@@ -7,6 +7,8 @@ let buttonElement = document.getElementById("start-timer");
 let resetButtonElement = document.getElementById("reset-timer");
 // console.log(buttonElement);
 
+let timer;
+
 const currentTime = new Date();
 // console.log(currentTime)
 buttonElement.addEventListener("click", () => {
@@ -31,6 +33,7 @@ buttonElement.addEventListener("click", () => {
     let now = new Date();
 
     // Calculate the difference in milliseconds
+
     let timeDifference = targetDateTime - now;
 
     if (timeDifference <= 0) {
@@ -56,6 +59,9 @@ buttonElement.addEventListener("click", () => {
 
   // Start the countdown
   updateCountdown(); // Call it immediately
-  let timer = setInterval(updateCountdown, 1000);
+  setInterval(updateCountdown, 1000);
 });
 
+resetButtonElement.addEventListener("click", (e) => {
+  inputElement.value = "";
+});
